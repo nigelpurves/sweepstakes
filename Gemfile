@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem "flightstats-flex", "~> 0.3.0"
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

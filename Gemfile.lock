@@ -55,6 +55,7 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
+    flightstats-flex (0.3.0)
     hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
@@ -189,6 +190,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)
   devise
+  flightstats-flex (~> 0.3.0)
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   omniauth
