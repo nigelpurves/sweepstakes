@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Sweepstakes::Application.config.secret_key_base = 'cf6988601ad77037fc71f128e91c58f6849690ec18ba2892fcb62184655e1a2d179f71a2dc722c7dc8a6b5d2bc6eafc60959b5e8250e729b0b8683d82fe2abb9'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Sweepstakes::Application.config.secret_key_base = secure_token
